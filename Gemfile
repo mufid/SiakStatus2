@@ -33,6 +33,9 @@ gem 'rest-client'
 # SIAK Worker
 gem "rufus-scheduler", "~> 2.0.23"
 
+# Pagination
+gem "kaminari"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
