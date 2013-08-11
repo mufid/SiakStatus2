@@ -1,4 +1,8 @@
 SiakNew::Application.routes.draw do
+  # resources :siak_statuses
+
+  get '/' => "siak_statuses#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

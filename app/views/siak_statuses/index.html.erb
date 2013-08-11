@@ -1,0 +1,19 @@
+<h1>Status Graph</h1>
+
+<h1>Status Detail</h1>
+
+<table>
+  <tr>
+    <th>Waktu</th>
+    <th>Ping</th>
+  </tr>
+
+<% @statuses.each do |status| %>
+  <tr>
+    <td><%= status.created_at %></td>
+    <td><%= status.ping_ms %> ms</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
