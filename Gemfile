@@ -43,6 +43,12 @@ gem "zurb-foundation", "~> 4.3.1"
 # Blazingly fast web server
 gem "thin"
 
+# Windows compatibility
+gem 'rails_12factor'
+
+# Heroku things
+# gem 'rails_serve_static_assets'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
