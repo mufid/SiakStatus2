@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130806054706) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "siak_statuses", force: true do |t|
     t.integer  "ping_ms"
     t.datetime "created_at"

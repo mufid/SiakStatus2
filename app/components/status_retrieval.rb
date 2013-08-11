@@ -7,7 +7,6 @@ class StatusRetrieval
   def initialize username, password
     @username = username
     @password = password
-    @record = nil
   end
   def perform
     beginning_time = Time.now
@@ -15,15 +14,9 @@ class StatusRetrieval
     ck = get_cookie_login
     retrieve_uri ck
     
-    @record = SiakStatus.new
-    @record.ping_ms = (Time.now - beginning_time) * 1000
-    
-    @record
-  end
-  def commit
-    raise "Not yet started" if @record.nil?
-    
-    @record.save
+    record = SiakStatus.new
+    record.ping_ms = (Time.now - beginning_time) * 1000
+    record
   end
   def get_cookie_login
     response = RestClient.post URI_LOGIN, {u: @username, p: @password}
