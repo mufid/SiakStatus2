@@ -36,6 +36,13 @@ gem "rufus-scheduler", "~> 2.0.23"
 # Pagination
 gem "kaminari"
 
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', :platforms => :ruby
+gem "zurb-foundation", "~> 4.3.1"
+
+# Blazingly fast web server
+gem "thin"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

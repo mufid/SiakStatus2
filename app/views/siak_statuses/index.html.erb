@@ -1,19 +1,31 @@
-<h1>Status Graph</h1>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Grafik Status 15 Menit Terakhir</h1>
+    <small>Ping menyatakan kecepatan respons. Makin rendah makin baik.</small>
+  </div>
+</div>
 
-<h1>Status Detail</h1>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Status Detail</h1>
+    <small>Ping menyatakan kecepatan respons. Makin rendah makin baik.</small>
+    <table>
+      <tr>
+        <th>Waktu</th>
+        <th>Ping</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Waktu</th>
-    <th>Ping</th>
-  </tr>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.created_at %></td>
+        <td><%= status.ping_ms %> ms</td>
+      </tr>
+    <% end %>
+    </table>
+    <%= paginate @statuses %>
 
-<% @statuses.each do |status| %>
-  <tr>
-    <td><%= status.created_at %></td>
-    <td><%= status.ping_ms %> ms</td>
-  </tr>
-<% end %>
-</table>
-<%= paginate @statuses %>
+  </div>
+</div>
+
+
 <br />
