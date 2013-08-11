@@ -2,6 +2,7 @@
   <div class="large-12 columns">
     <h1>Grafik Status 15 Menit Terakhir</h1>
     <small>Ping menyatakan kecepatan respons. Makin rendah makin baik.</small>
+    <div id="chart_div" style="width:100%;height:13em;background:#fafafa;"></div>
   </div>
 </div>
 
@@ -23,6 +24,25 @@
     <% end %>
     </table>
     <%= paginate @statuses %>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(
+          <%= raw @data_json.as_json %>
+         );
+
+        var options = {
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+      
+    </script>
 
   </div>
 </div>
